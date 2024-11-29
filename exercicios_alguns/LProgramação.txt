@@ -1,0 +1,11 @@
+PHP: O PHP é uma linguagem voltada para a programação web, pode ser usada de forma estrutura ou de 
+Orientação ao objeto. Um ponto negativo é sobre tratar e lidar com questões de seguranças que pode
+se tornar mais demorado em comparação com outras linguagens.
+
+Javascript: O Js é uma linguagem versátil, pode ser usada para aplicações web como no front e no back,
+mobile e automações. Possui uma sintaxe de mais alto nível e um ponto negativo, possa ser que não rode 
+em alguns navegadores.
+
+C#: O C# é uma linguagem orientada ao objeto , onde é sucessora de C e C++. Muito usada nos dias de hoje,
+sendo utilizadas em software, web, aplicativos, jogos. Muito usada também com a combinação com a plataforma
+.NET.

@@ -1,0 +1,62 @@
+Algoritimo para descobrir se um número é par ou impar
+-------------------------------------------------------
+
+1-Obter e ler um número.    (Entrada)
+2-Se o resto da divisão desse numero dividido por 2 for igual a 0 faça o passo 3, caso contrário o passo 4.   (Processamento)
+3-Imprima que o número é par.	(Saída)
+4-Imprima que o número é impar. (Saída)
+
+-------------------------------------------------------
+
+EXEMPLO
+
+num = 10
+
+if(num % 2 == 0):
+    print("Número Par")
+else:
+    print("Número Impar")
+
+-----------------------FIM-----------------------------
+
+OUTRA FORMA MAIS COMPLEXA (menos eficiente)	
+
+num = 129
+
+lista = [0,2,4,6,8]
+
+numString = str(num)
+
+lastCaracter = numString[-1]
+convertidoEMInt = int(lastCaracter)
+
+print(convertidoEMInt)
+
+for i in lista:
+    if(convertidoEMInt == i):
+        teste = True
+        break
+    else:
+       teste = False
+       
+if(teste):
+    print("Numero Par")
+else:
+    print("Numero Impar")
+
+
+--------------------------FIM--------------------------
+
+Montar Snaduiche 
+
+Algoritimo pseudo-linguagem
+
+Algoritimo Sanduiche
+	1-Obter o Pão
+	2-Obter margarina
+	3-obter frios
+	4-Passe a margarina no pão
+	5-Coloque os frios no pão
+	6-Caso não tiver os incredientes passo 7, senão passo 8
+	7-Compar ingrediente(s)
+	8-Comer

@@ -1,0 +1,5 @@
+Váriavel:É um endereço de memória que recebe um valor
+e esse valor pode ser alterado.
+
+Constante:Também é um enderço de memória que recebe um
+valor, porém esse valor não é alterado.
