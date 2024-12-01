@@ -1,0 +1,17 @@
+linguagem compilada: Traduzem o codigo fonte inteiro
+para o codigo de maquina antes da execução.
+
+linguagem interpretada: Traduzem em tempo real para a máquina.
+
+
+Vantagens e desvantagem de utilizar uma linguagem compilada:
+
+V: Desempenho será mais rápido
+v: Maior controle ao hardware e memoria da CPU
+v:Menor overhead em tempo de execução
+
+D: A compilação pode demorar
+D:Não é portavel
+D: O código binário pode
+dificultar a depuração, pois os erros
+encontrados podem não ser facilmente rastreáveis ao código-fonte.

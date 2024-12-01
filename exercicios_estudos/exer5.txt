@@ -1,0 +1,5 @@
+#explique como uma l intepretada pode facilitar sua depuração de coidgo em relação a compilada
+
+R: Como a interpretada é processada linha por linha
+caso houver erro, o codigo irá parar nessa mesma linha
+facilitando o processo de depurar.
