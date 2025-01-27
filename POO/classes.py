@@ -12,7 +12,7 @@ class Cachorro:
     def correr(self, km):
         print(f"{self.nome} correu {km} km")
         
-    
+
 
 cachorro_luana = Cachorro("Pituco", "Vira-lata" , "Caramelo", 8)
 cachorro_luana.correr(35)
@@ -31,8 +31,18 @@ class Livro:
         
     def __str__(self):#retornar o livro
         return f"O livro {self.titulo} foi escrito por {self.autor}"
+    
+    def __eq__(self, value):
+        if (isinstance(value, Livro)):
+            titulo_igual = self.titulo == value.titulo
+            autores_iguais = self.autor == value.autor
+            return titulo_igual and autores_iguais
+        else:
+            return False
+        
         
 
 livro1 = Livro("Romance", "Crepusculo", "kauan afonso", ["Teddy", "Lucas"], 14)
 livro1.abrir(10)
+print(livro1.__eq__(cachorro_luana))
 print(livro1)
