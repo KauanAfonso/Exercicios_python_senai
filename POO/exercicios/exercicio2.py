@@ -14,5 +14,5 @@ class ContaBancaria:
         else:
             self.saldo -=valor
             
-kauan = ContaBancaria(123, "Kauan",)
+kauan = ContaBancaria(123, "Kauan")
 print(kauan.depositar(800))
