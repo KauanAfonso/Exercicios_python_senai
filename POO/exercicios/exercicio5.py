@@ -19,6 +19,10 @@ class Funcionario:
         self.calcular_inss()
         calculo = self.__salario - (self.__salario * self.taxa_inss )/ 100      
         self.__salario = calculo
+        
+    def beneficios(self, porcentagem):
+        calculo = (self.__salario * porcentagem)/ 100 
+        self.__salario -= calculo
     
     def get_salario(self):
         return self.__salario
@@ -26,6 +30,7 @@ class Funcionario:
 
 kauan = Funcionario("Kauan", 8000, "DEV")
 kauan.descontar_inss()
+kauan.beneficios(4)
 print(kauan.get_salario())
     
     
