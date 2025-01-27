@@ -9,6 +9,6 @@ class Circulo:
         PI = 3.14
         return 2 * (self.raio * PI)
     
-bola = Circulo(20)
+bola = Circulo(10)
 print(bola.calcular_perimetro())
         
