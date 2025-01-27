@@ -6,7 +6,7 @@ class Triangulo:
         self.triangulo_valido = False
         
     def verificar_triangulo(self):
-        if self.ladoA == self.ladoB and self.ladoA == self.ladoC:
+        if (self.ladoA + self.ladoB > self.ladoC) or (self.ladoC + self.ladoB > self.ladoA) or (self.ladoA + self.ladoC > self.ladoB):
             self.triangulo_valido = True
         
     def calcular_area(self):
@@ -17,5 +17,5 @@ class Triangulo:
             return "Indisponível"   
     
     
-equilatero = Triangulo(20,20,20)
+equilatero = Triangulo(20,20,15)
 equilatero.calcular_area()
