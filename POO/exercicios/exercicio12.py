@@ -4,10 +4,12 @@ class Loja_virtual:
         self.produtos = []
         
     def criar_produtos(self,produto):
-        self.produtos.append(produto.lote)
+        dic = {"ID":produto.id , "NOME":produto.nome, "PRECOOOOOOO": produto.preco, "DESCRICAO": produto.descricao}
+        self.produtos.append(dic)
         
 
     def mostrar_produtos(self):
+        print(self.produtos)
         for produto in self.produtos:
             print(produto)
             
@@ -21,12 +23,7 @@ class Produtos():
         self.nome = nome
         self.preco = preco
         self.descricao = descricao
-        self.lote = self.contabilizar_produto()
-    
-    def contabilizar_produto(self):
-        dic = {"ID":self.id , "NOME":self.nome, "PRECO": self.preco, "DESCRICAO": self.descricao}
-        return dic
-        
+       
     def __str__(self):
         return f"ID {self.id} , {self.nome} custa R$ {self.preco} e sua decrição: {self.descricao}"
          
@@ -39,8 +36,8 @@ class carrinho_compras(Loja_virtual):
  
     
     def adicionar_produto(self):
-        proc = self.retornar_produtos()
-        for elemento in proc:
+        produ = self.retornar_produtos()
+        for elemento in produ:
             print(elemento)
       
     
@@ -59,7 +56,7 @@ minha_loja.criar_produtos(banana2)
 
 # minha_loja.mostrar_produtos()
 carrinho = carrinho_compras()
-carrinho.mostrar_produtos()
+carrinho.adicionar_produto()
  
         
     
