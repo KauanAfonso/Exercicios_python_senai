@@ -36,9 +36,8 @@ class carrinho_compras(Loja_virtual):
     
     def adicionar_produto(self,nome_produto):
         for elemento in self.produtos:
-            for nome in elemento.items():
-                if nome["NOME"] == nome_produto:
-                    print("Disponivel")
+            if elemento["NOME"] == nome_produto:
+                print('disponivel')
       
     
     def calcular_valor_total(self):
@@ -56,7 +55,7 @@ minha_loja.criar_produtos(banana2)
 
 # minha_loja.mostrar_produtos()
 carrinho = carrinho_compras(minha_loja.produtos)
-carrinho.adicionar_produto("banana")
+carrinho.adicionar_produto("bananaaaaa")
  
         
     
