@@ -38,6 +38,8 @@ class carrinho_compras(Loja_virtual):
         for elemento in self.produtos:
             if elemento["NOME"] == nome_produto:
                 print('disponivel')
+            for i in elemento:
+                print(i)
       
     
     def calcular_valor_total(self):
