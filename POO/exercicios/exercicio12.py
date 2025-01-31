@@ -41,14 +41,15 @@ class carrinho_compras(Loja_virtual):
                 preco = elemento["PRECO"]
                 quantidade_total = elemento["QUANTIDADE"]
                 quantidade_total -= quantidade
+                self.calcular_valor_total(preco)
                 dic = {"Produto": nome, "Preco": {preco * quantidade}, "quantidade": quantidade}
                 self.produtos_no_carrinho.append(dic)
                 print(self.produtos_no_carrinho)
             else:
                 print("erro")
     
-    def calcular_valor_total(self):
-        pass   
+    def calcular_valor_total(self, valor):
+        self.valor_total += valor
     
     
 
