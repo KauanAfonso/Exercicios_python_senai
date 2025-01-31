@@ -47,8 +47,7 @@ class carrinho_compras(Loja_virtual):
 
                 dic = {"Produto": nome, "Preco": {preco * quantidade}, "quantidade": quantidade}
                 self.produtos_no_carrinho.append(dic)
-
-                print(self.produtos_no_carrinho)
+                print('Produto adicionado com sucesso!')
                 break
         else:
             print("Produto não encontrado")
@@ -56,6 +55,9 @@ class carrinho_compras(Loja_virtual):
     def calcular_valor_total(self, valor):
         self.valor_total += valor
         print(f"Preço total: R$ {self.valor_total}")
+
+    def visualizar_carrinho(self):
+        print(self.produtos_no_carrinho)
     
     
 
@@ -70,6 +72,7 @@ minha_loja.criar_produtos(banana2)
 # minha_loja.mostrar_produtos()
 carrinho = carrinho_compras(minha_loja.produtos)
 carrinho.adicionar_produto("banana", 2)
+carrinho.visualizar_carrinho()
  
         
     
