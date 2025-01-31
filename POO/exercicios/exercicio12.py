@@ -33,23 +33,29 @@ class carrinho_compras(Loja_virtual):
         self.produtos_no_carrinho = []
         self.produtos = produtos
  
-    
+     
     def adicionar_produto(self,nome_produto, quantidade):
         for elemento in self.produtos:
             if elemento["NOME"] == nome_produto:
+
                 nome = elemento["NOME"]
                 preco = elemento["PRECO"]
                 quantidade_total = elemento["QUANTIDADE"]
                 quantidade_total -= quantidade
-                self.calcular_valor_total(preco)
+        
+                self.calcular_valor_total(preco * quantidade)
+
                 dic = {"Produto": nome, "Preco": {preco * quantidade}, "quantidade": quantidade}
                 self.produtos_no_carrinho.append(dic)
+
                 print(self.produtos_no_carrinho)
-            else:
-                print("erro")
+                break
+        else:
+            print("Produto não encontrado")
     
     def calcular_valor_total(self, valor):
         self.valor_total += valor
+        print(f"Preço total: R$ {self.valor_total}")
     
     
 
