@@ -43,6 +43,7 @@ class carrinho_compras(Loja_virtual):
                 quantidade_total = elemento["QUANTIDADE"]
                 quantidade_total -= quantidade
         
+                print("\n-------------VENDO CARRINHO--------------------\n")
                 self.calcular_valor_total(preco * quantidade)
 
                 dic = {"Produto": nome, "Preco": {preco * quantidade}, "quantidade": quantidade}
@@ -62,18 +63,26 @@ class carrinho_compras(Loja_virtual):
     
 
 banana = Produtos(1,"banana",200,"Amarelo" , 10)
-banana2 = Produtos(2,"maça",200,"amarelo" , 8)
+maca = Produtos(2,"maça",200,"maca verde" , 8)
+carne = Produtos(3,"carne bovina", 55, "Carne de boi", 88)
 
 minha_loja = Loja_virtual()
 
+#criando produtos pra loja
 minha_loja.criar_produtos(banana)
-minha_loja.criar_produtos(banana2)
+minha_loja.criar_produtos(maca)
+minha_loja.criar_produtos(carne)
 
-# minha_loja.mostrar_produtos()
+minha_loja.mostrar_produtos()
+
+
+#adicionando produto ao carrinho    
 carrinho = carrinho_compras(minha_loja.produtos)
 carrinho.adicionar_produto("banana", 2)
+
+
 carrinho.visualizar_carrinho()
- 
+
         
     
         
