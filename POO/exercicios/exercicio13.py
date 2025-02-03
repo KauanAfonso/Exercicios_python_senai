@@ -16,7 +16,7 @@ class Agenda():
                     self.lista_agenda.pop([nome,telefone])
         pass
 
-    def atualizar_contato(self, telefone):
+    def atualizar_contato(self, nome, telefone , novo_nome, novo_telefone):
         pass
 
 
