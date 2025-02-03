@@ -9,15 +9,29 @@ class Agenda():
         pessoa.append(telefone) 
         self.lista_agenda.append(pessoa)
 
-    def excluir_contato(self, nome,telefone):
+    def excluir_contato(self, nome, telefone):
         for contato in self.lista_agenda:
             for numero in contato:
                 if numero == telefone:
-                    self.lista_agenda.pop([nome,telefone])
-        pass
+                    self.lista_agenda.remove([nome,telefone])
+        
 
     def atualizar_contato(self, nome, telefone , novo_nome, novo_telefone):
-        pass
+            for contato in self.lista_agenda:
+                if contato[0] == nome and contato[1] == telefone:
+                    contato[0] = novo_nome
+                    contato[1] = novo_telefone
+
+
+    def visualizar_contatos(self):
+        print(self.lista_agenda)
 
 
 minha_agenda = Agenda()
+minha_agenda.criar_contato("Kauan" , "123456789")
+minha_agenda.criar_contato("dorival" , "987654321")
+
+minha_agenda.excluir_contato("Kauan", "123456789")
+minha_agenda.atualizar_contato("dorival", "987654321", "dorival professor do senai", "5566112233")
+
+minha_agenda.visualizar_contatos()
