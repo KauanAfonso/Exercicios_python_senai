@@ -22,23 +22,29 @@ class Rede_social():
         for usuario in self.usuarios:
             print(f"Nome: {usuario.nome}")
 
-class Perfil():
+class Perfil(Rede_social):
     
     def __init__(self, nome):
+        super().__init__()
         self.nome = nome
         self.lista_amigos = []
         self.lista_posts = []
 
 
-    def adicionar_amigo(self, amigo):
-        if(Rede_social.buscar_amigo(amigo)):
-            self.lista_amigos.append(amigo)
+    def adicionar_amigo(self, amigo, rede_social):
+        if(rede_social.buscar_amigo(amigo)):
+           return self.lista_amigos.append(amigo)
         else:
            return "Perfil não encontrado"
+        
 
     def adicionar_comentarios(self, user, conteudo, indicie):
         for post in user.lista_posts:
-            post.comentarios.append(f"User : {user.nome} comentou {user.conteudo}")
+            post.comentarios.append(f"User : {user.nome} comentou {conteudo}")
+
+    def visualizar_amigos(self):
+        for amigo in self.lista_amigos:
+            print(f"Você e {amigo.nome} são amigos")
 
 
     def __str__(self):
@@ -55,10 +61,18 @@ class Post(Perfil):
 
 
 instagram = Rede_social() 
+
 kauan = Perfil("Kauan")
+cris = Perfil('Cris')
+
 instagram.criar_usuario(kauan)
-print(instagram.buscar_amigo(kauan))
-instagram.visualizar_usuarios()
+instagram.criar_usuario(cris)
+
+kauan.adicionar_amigo(cris, instagram)
+kauan.visualizar_amigos()
+
+# print(instagram.buscar_amigo(cris))
+# instagram.visualizar_usuarios()
 
     
 
