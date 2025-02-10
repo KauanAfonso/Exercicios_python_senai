@@ -1,18 +1,27 @@
+import random as r
+
 class Cartas:
     def __init__(self):
-        self.cartas = ["A♦️" , "A♠️", "A♥️", "A♣️" , "2♦️" , "2♠️", "2♥️", "2♣️"]
+        self.cartas = ["A♦️" , "A♠️", "A♥️", "A♣️" , "2♦️" , "2♠️", "2♥️", "2♣️", "3♦️" , "3♠️", "3♥️", "3♣️"]
+        self.cartas_jogadas = []
+        self.suas_cartas = []
+        self.cartas_retirada = 0
         
     def embaralhar_cartas(self):
-        pass
-    
-    def sortear_carta(self):
-        pass
+        r.shuffle(self.cartas)
+        
     
     def distribuir_cartas(self):
-        pass
+        self.cartas_retirada = r.choice(self.cartas)
+        self.suas_cartas.append(self.cartas_retirada)
     
+    def get_mao_cartas(self);
+        return self.cartas_jogadas
+
     def jogar_cartas(self):
         pass
+
+    
 
 
     ''''
