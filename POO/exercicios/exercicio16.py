@@ -33,7 +33,8 @@ class Perfil(Rede_social):
 
     def adicionar_amigo(self, amigo, rede_social):
         if(rede_social.buscar_amigo(amigo)):
-           return self.lista_amigos.append(amigo)
+           self.lista_amigos.append(amigo)
+           amigo.lista_amigos.append(self)
         else:
            return "Perfil não encontrado"
 
@@ -41,17 +42,17 @@ class Perfil(Rede_social):
         for amigo in self.lista_amigos:
             print(f"Você e {amigo.nome} são amigos")
 
-    def adicionar_comentarios(self, user, conteudo, indicie):
-        for post in user.lista_posts:
-            post.comentarios.append(f"User : {user.nome} comentou {conteudo}")
-
     def criar_post(self,titulo, descricao):
         post = Post(titulo, descricao)
         self.lista_posts.append(post)
+        return post
 
     def visualizar_post(self):
         for post in self.lista_posts:
             print(post)
+    
+    def adicionar_comentarios(self, post, conteudo):
+        post.adicionar_comentarios(self, conteudo) #passando o instancia da classe mesmo e o conteudo
 
 
     def __str__(self):
@@ -63,8 +64,11 @@ class Post():
         self.descricao = descricao
         self.comentarios = []
     
-    def __str__(self):
-        return f"Titulo: {self.titulo}\n Descrição: {self.descricao}\n Comentarios: {self.comentarios}"
+    def adicionar_comentarios(self, user, conteudo):
+        self.comentarios.append(f"{user.nome} comentou: {conteudo}")
+
+    def __repr__(self):
+        return f"Titulo: {self.titulo}\n Descrição: {self.descricao}\n Comentarios: {self.comentarios}\n"
        
 
 instagram = Rede_social() 
@@ -77,7 +81,11 @@ instagram.criar_usuario(cris)
 
 kauan.adicionar_amigo(cris, instagram)
 kauan.visualizar_amigos()
-kauan.criar_post("Corinthains Campeão", "O time ganhou a libertadores")
+
+post1 = kauan.criar_post("Corinthains Campeão", "O time ganhou a libertadores")
+post2 = kauan.criar_post("Corinthains fez 2 gols", "golaço")
+
+cris.adicionar_comentarios(post1,"BOAAAA")
 kauan.visualizar_post()
 
 
