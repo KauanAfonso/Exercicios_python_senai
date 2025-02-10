@@ -11,8 +11,9 @@ class Biblioteca:
     def __init__(self):
         self.livros_estoque = []
 
-    def cadastrar_livros(self):
+    def cadastrar_livros(self, titulo, atuhor, qtd):
         pass
+
     def fazer_emprestimos(self):
         pass
     
