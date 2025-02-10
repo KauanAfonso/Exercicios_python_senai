@@ -1,3 +1,11 @@
+'''
+
+Crie uma classe chamada “LojaVirtual” que represente uma plataforma de vendas 
+online. Essa classe deve ter funcionalidades para cadastrar produtos, gerar carrinho de 
+compras, aplicar descontos e calcular o valor total da compra. 
+
+'''
+
 class Loja_virtual:
     
     def __init__(self):

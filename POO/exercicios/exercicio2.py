@@ -1,3 +1,11 @@
+'''
+
+Implemente uma classe chamada “ContaBancária” que possua atributos para 
+armazenar o número da conta, nome do titular e saldo. Adicione métodos para realizar 
+depósitos e saques.
+
+'''
+
 class ContaBancaria:
     def __init__(self, numero_conta,nome_titular):
         self.numero_conta = numero_conta
