@@ -27,4 +27,10 @@ class Jogo_adivinhacao:
             return False
         
     
-    
+jogo = Jogo_adivinhacao()
+for i in range(0,3,1):
+    tentativa = jogo.palpitar(int(input("Digite um número: ")))
+    if tentativa:
+        break
+else:
+    print("Acabou")
