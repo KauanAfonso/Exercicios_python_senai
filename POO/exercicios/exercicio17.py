@@ -42,14 +42,22 @@ class Biblioteca:
                 return 'Não encontrado'
 
 
-    def verificar_disponibilidade(self):
-        pass
+    def verificar_disponibilidade(self, codigo):
+        for livro in self.livros_estoque:
+            print(livro['codigo']) 
+            if livro['codigo'] == codigo and livro["quantidade"] > 0:
+                return "Disponível"
+            else:
+                print("Não disponível")
 
 
 
 bibliotea = Biblioteca()
 bibliotea.cadastrar_livros(1234, "O pé grande", "Kauan Afonso", 20)
-bibliotea.fazer_emprestimos("Kauan", "kuan@gmail.com", 1234, 2)
+bibliotea.fazer_emprestimos("Kauan", "kuan@gmail.com", 1234, 1)
+
 print(bibliotea.livros_estoque)
 bibliotea.devolver_livros(1234)
-print(bibliotea.livros_estoque)
+# print(bibliotea.livros_estoque)
+
+print(bibliotea.verificar_disponibilidade(1234))
