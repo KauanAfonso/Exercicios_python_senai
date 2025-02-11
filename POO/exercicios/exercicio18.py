@@ -40,9 +40,6 @@ class Calendario:
             print("Não é feriado! ")
 
     def calcular_dias(data1, data2):
-        # dias_data1 = datetime.date(data1)
-        # dias_data2 = datetime.date(data2)
-
         print(f"A difença de dias é de {data1 - data2}")
 
 
