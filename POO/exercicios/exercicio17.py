@@ -13,23 +13,34 @@ class Biblioteca:
         self.listros_emprestados = []
 
     def cadastrar_livros(self, codigo,titulo, author, qtd):
-        livro = {"codigo":codigo, "titulo": titulo, "author":author , "Quantidade": qtd}
+        livro = {"codigo":codigo, "titulo": titulo, "author":author , "quantidade": qtd}
         return self.livros_estoque.append(livro)
 
     def fazer_emprestimos(self,nome,email, codigo_livro, quantidade):
         for livro in self.livros_estoque:
-            if livro["codigo"] == codigo_livro and livro["Quantidade"] > 0 and livro["Quantidade"]>= quantidade:
-                livro["Quantidade"] -= quantidade
-                self.listros_emprestados.append(f"Empréstimo para {nome} no email {email} Código: {livro['codigo']}, título: {livro['titulo']}, autor: {livro['author']} quantidade: {quantidade}")
+            if livro["codigo"] == codigo_livro and livro["quantidade"] > 0 and livro["quantidade"]>= quantidade:
+                livro["quantidade"] -= quantidade
+                self.listros_emprestados.append({"nome": nome, "email": email, "codigo": livro["codigo"], "titulo": livro["titulo"], "autor": livro["author"], "quantidade": quantidade})
                 break
             else:
-                "indiponível"
+                return "indiponível"
         else:
-            "livro não encontrado"
+            return "livro não encontrado"
 
     
-    def devolver_livros(self):
-        pass
+    def devolver_livros(self, codigo):
+        quant = 0
+        for livro in self.listros_emprestados:
+            if livro["codigo"] == codigo:
+                quant = livro["quantidade"]
+                self.listros_emprestados.remove(livro)
+
+                for livro in self.livros_estoque:
+                    if livro["codigo"] == codigo:
+                        livro["quantidade"] += quant
+            else:
+                return 'Não encontrado'
+
 
     def verificar_disponibilidade(self):
         pass
@@ -39,4 +50,6 @@ class Biblioteca:
 bibliotea = Biblioteca()
 bibliotea.cadastrar_livros(1234, "O pé grande", "Kauan Afonso", 20)
 bibliotea.fazer_emprestimos("Kauan", "kuan@gmail.com", 1234, 2)
-print(bibliotea.lz)
+print(bibliotea.livros_estoque)
+bibliotea.devolver_livros(1234)
+print(bibliotea.livros_estoque)
