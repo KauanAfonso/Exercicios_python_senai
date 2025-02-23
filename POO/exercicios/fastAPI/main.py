@@ -35,8 +35,15 @@ def criar_tarefa(id: int, nome: str, data_vencimento: str, status: str, categori
      lista_tarefas.append(tarefa)
      return "Criado com sucesso!"
  
-@app.put("./excluir_tarefa")
+@app.delete("./excluir_tarefa")
 def excluir_tarefa(id: int):
     for tarefa in lista_tarefas:
         if tarefa.id == id:
-            lista_tarefas.remove(tarefa)    
+            lista_tarefas.remove(tarefa)   
+
+@app.put("./atualizar_tarefa")
+def atualizar_tarefa(id: int, nome: str, data_vencimento: str, status: str, categoria: str):
+    tarefa_atualizada = {"id": id, "nome": nome , "data_vencimento" : data_vencimento, "status": status, "categoria": categoria},
+    for tarefa in lista_tarefas:
+        if tarefa.id == id:
+            lista_tarefas[tarefa] = tarefa_atualizada  
