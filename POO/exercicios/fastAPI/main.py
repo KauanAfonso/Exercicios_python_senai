@@ -39,4 +39,4 @@ def criar_tarefa(id: int, nome: str, data_vencimento: str, status: str, categori
 def excluir_tarefa(id: int):
     for tarefa in lista_tarefas:
         if tarefa.id == id:
-            tarefa.remove()    
+            lista_tarefas.remove(tarefa)    
